@@ -1,21 +1,20 @@
 import java.util.Scanner;
+import java.io.File;
 
 public class PhoneCalls {
-    public static void main(String[] args) {
-        // Scanner to take input from file.
-        Scanner fileScanner = new Scanner(new File(args[0]));
+    public static void main(String[] args) throws Exception {
+        // Creating instance of PhoneCallList
+        PhoneCallList callList = new PhoneCallList(new Scanner(new File(args[0])));
 
         // Scanner to take input from command line.
         Scanner scanner = new Scanner(System.in);
 
-        // Creating instance of PhoneCallList
-        PhoneCallList list = new PhoneCallList(fileScanner);
-
-        String check = scanner.nextLine();
-        while (check.compareTo("Q") != 0) {
-            System.out.print()
-        } // while
-
-
+        String check;
+        do {
+            System.out.print("Enter phone number prefix, or Q to quit: ");
+            check = scanner.nextLine();
+            if (! check.equals("Q"))
+                System.out.println(callList.matchingCallReport(check));
+        }   while (! check.equals("Q"));// while
     } // main
 } // PhoneCalls
