@@ -17,7 +17,7 @@ public class StockItem{
     private int quantityInStock;
 
     // The standard percetage VAT rate.
-    private double vatRate;
+    public double vatRate;
 
     // Constructor 
     public StockItem(int initialPriceExVat, int initialQuantityInStock){
@@ -29,7 +29,7 @@ public class StockItem{
     } // StockItem
 
     // Returns the stock code for this stock itme.
-    public int getStockCode(){
+    public int getStockCode(){ 
         return stockCode;
     } // getStockCode
 
