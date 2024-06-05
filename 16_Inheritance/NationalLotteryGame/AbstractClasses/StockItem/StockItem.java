@@ -1,5 +1,5 @@
 // Representation of StockItem to keep track of stock and prices.
-public class StockItem{
+public abstract class StockItem{
 
     // The number of stock items created so far.
     private static int noOfStockItemsCreated = 0;   
@@ -34,14 +34,10 @@ public class StockItem{
     } // getStockCode
 
     // Returns the string "Stock item type"
-    public String getStockType(){
-        return "Stock item type";
-    } // getStockType
+    public abstract String getStockType();
 
     // Returns the string  "A description of the stock item"
-    public String getDescription(){
-        return "A description of the stock item";
-    } // getDescription
+    public abstract String getDescription();
 
     // Returns the quantity in stock of this stock item.
     public int getQuantityInStock(){
