@@ -13,8 +13,8 @@ public class Punter extends Person {
     // Returns whether or not the Person is happy.
     public boolean isHappy(){
         return false;
-    } // isHappy
-
+    } // isHappy 
+  
     // Returns the Person's current saying.
     public String getCurrentSaying() {
         return "Make me happy: give me lots of money";
