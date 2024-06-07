@@ -6,6 +6,7 @@ public class TestPersonSubclasses {
             new Director("Sir Lance Earl Otto"),
             new Psychic("Miss T. Peg de Gowt"),
             new Punter("Ian Arushfa Rishly Ving"),
+            new Teenager("Homer Nalzone"),
             new TVHost("Terry Bill Woah B'Gorne")
         };
 
