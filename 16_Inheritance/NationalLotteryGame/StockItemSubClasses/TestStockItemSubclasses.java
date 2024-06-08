@@ -24,21 +24,45 @@ public class TestStockItemSubclasses{
         System.out.println(item);
     } // changePrice
 
+    private static void testStock(StockItem item) {
+        System.out.println("-------------------------------------------------------------");
+        createStock(item);
+        buyStock(item, 10);
+        sellStock(item, 5);
+        changePrice(item, 599);
+        System.out.println("");
+        if (item instanceof TextDescriptionStockItem) 
+            testTextDescriptionStockItem((TextDescriptionStockItem)item);
+    } // testStock
+
+    private static void testTextDescriptionStockItem(TextDescriptionStockItem item) {
+        if (item instanceof MouseMat) {
+            item.setDescription("this is new mouse mat");
+            createStock(item);
+            buyStock(item, 10);
+            sellStock(item, 5);
+            changePrice(item, 599);
+        } // if
+        if (item instanceof Book) {
+            item.setDescription("List of all items and prices");
+            createStock(item);
+            buyStock(item, 10);
+            sellStock(item, 5);
+            changePrice(item, 599);
+        } // if
+    } // testTextDescriptionStockItem
+
     public static void main (String args[]){
         StockItem[] stockItems = {
-            new Catalogue(100, 10),
+            new Book(100, 10),
             new MouseMat(200, 20),
             new CPU(300, 30),
             new Keyboard(400, 40),
             new HardDisc(500, 50)
         };
 
-        for (StockItem stockItem: stockItems){
-            System.out.println("-------------------------------------------------------------");
-            createStock(stockItem);
-            buyStock(stockItem, 10);
-            sellStock(stockItem, 5);
-            changePrice(stockItem, 599);
+        for (StockItem stockItem : stockItems){
+            testStock(stockItem);
         } // for
     } // main
 } // class TestStockItemSubclasess
