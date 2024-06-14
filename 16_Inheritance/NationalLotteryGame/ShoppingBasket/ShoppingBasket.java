@@ -25,10 +25,30 @@ public class ShoppingBasket {
         stockItemPurchaseRequests = new StockItemPurchaseRequest[noOfPurchaseRequests+1];
     } // ShoppingBasket
 
+    // returns current purchase requests.
+    public StockItemPurchaseRequest[] getPurchaseRequests() {
+        return stockItemPurchaseRequests;
+    } // getPurchaseRequests
+
+    // This is called once array is full and to increase the size.
+    private void resizeArrayOfRequests() {
+        int index = 0;
+        StockItemPurchaseRequest[] newStockItemPurchaseRequests = 
+                            new StockItemPurchaseRequest[noOfPurchaseRequests+1];
+        for(StockItemPurchaseRequest request : stockItemPurchaseRequests){
+               newStockItemPurchaseRequests[index] = request;
+               index++;
+        } // for
+        stockItemPurchaseRequests = newStockItemPurchaseRequests;
+    } // resizeArrayOfRequests
+
     // Add a given stock item with amount 
     public void add(StockItem stockItem, int quantity) {
         StockItemPurchaseRequest request = new StockItemPurchaseRequest(stockItem, quantity);
+        if (stockItemPurchaseRequests.length <= noOfPurchaseRequests)
+            resizeArrayOfRequests();
         stockItemPurchaseRequests[noOfPurchaseRequests] = request;
+        noOfPurchaseRequests++;
     } // add
 
     //  
@@ -43,13 +63,14 @@ public class ShoppingBasket {
             StockItem stockItem = request.getStockItem();
             int quantity = request.getQuantity();
 
-            baseketValueExVat += stockItem.getPriceExVat();
-            baseketValueIncVat += stockItem.getPriceIncVat();
 
-            if (stockItem.sellStock(quantity))
-                checkoutReport += "Purchased " + quantity + " of" + stockItem + "\n";
+            if (stockItem.sellStock(quantity)){
+                baseketValueExVat += stockItem.getPriceExVat() * quantity;
+                baseketValueIncVat += stockItem.getPriceIncVat() * quantity;
+                checkoutReport += "Purchased " + quantity + " of " + stockItem + "\n";
+            }
             else {
-                checkoutReport += "Not Purchased " + quantity + " of" + stockItem + "\n";
+                checkoutReport += "Not Purchased " + quantity + " of " + stockItem + "\n";
                 newStockItemPurchaseRequests[index] = request;
                 index++;
             } // else
@@ -66,7 +87,8 @@ public class ShoppingBasket {
     public String toString() {
         String result = "Shopping Basket: \n";
         for (StockItemPurchaseRequest request : stockItemPurchaseRequests) 
-            result += request;
+            if (request != null)
+                result += request + "\n";
         return result;
     } // toString
 } // class ShoppingBasket

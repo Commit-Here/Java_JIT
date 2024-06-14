@@ -5,7 +5,7 @@ public abstract class StockItem{
     private static int noOfStockItemsCreated = 0;   
 
     // Fixed Vat rate value.
-    private static double CURRENT_VAT_RATE = 20;
+    private static double CURRENT_VAT_RATE = 17.51;
 
     // The fixed stock code of this item.
     private final int stockCode;
