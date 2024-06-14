@@ -3,10 +3,10 @@ import java.awt.Color;
 // Representation of a lottery ball, comprising of colour and value.
 public class Ball {
 
-    // The numeric value of the vall.
+    // The numeric value of the ball.
     private final int value;
     
-    // The colour of the vall.
+    // The colour of the ball.
     private final Color colour;
 
     // A ball is constructed by giving a number and a color.
