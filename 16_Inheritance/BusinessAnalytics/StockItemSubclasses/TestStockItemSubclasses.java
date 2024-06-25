@@ -58,7 +58,8 @@ public class TestStockItemSubclasses{
             new MouseMat(200, 20),
             new CPU(300, 30),
             new Keyboard(400, 40),
-            new HardDisc(500, 50)
+            new HardDisc(500, 50, 1000),
+            new ReliableHardDisc(500, 40, 200, 20)
         };
 
         for (StockItem stockItem : stockItems){

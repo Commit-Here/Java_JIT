@@ -1,9 +1,12 @@
 // Representation of hard disc item.
 public class HardDisc extends StockItem {
 
-    // Constructor is given price and quantity.
-    public HardDisc(int price, int quantity){
+    private final int size;
+
+    // Constructor is given price, quantity and storage.
+    public HardDisc(int price, int quantity, int storage){
         super(price, quantity);
+        size = storage;
     } // HardDisc
 
     // Returns the string "Stock item type"
@@ -13,7 +16,7 @@ public class HardDisc extends StockItem {
 
     // Returns the string  "A description of the stock item"
     public String getDescription(){
-        return "Lots of space";
+        return size + "GB of space";
     } // getDescription
 
 } // class HardDisc
