@@ -18,6 +18,7 @@ public class TraineeWorker extends Worker {
     } // getPersonName
 
     // Returns the name of type of Person.
+    @Override
     public String getPersonType() {
         return "Trainee " + super.getPersonType();
     } // getPersonType

@@ -14,6 +14,7 @@ public class ReliableHardDisc extends HardDisc {
     } // ReliableHardDisc
 
     // Returns the string  "A description of the stock item"
+    @Override
     public String getDescription(){
         return super.getDescription() + ", guranteed " + guaranteedYears + " years";
     } // getDescription

@@ -20,6 +20,7 @@ public class HPC extends CPU {
     } // getStockType
 
     // Returns the string  "A description of the stock item"
+    @Override
     public String getDescription(){
         return "HPC(QBSoft)" +super.getDescription() + (withGPU ? "and has seperate GPU" : 
                                                                     "and has integrated GPU") ;
