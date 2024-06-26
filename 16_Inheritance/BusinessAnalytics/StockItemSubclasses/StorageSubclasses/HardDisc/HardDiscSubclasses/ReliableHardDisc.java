@@ -7,8 +7,9 @@ public class ReliableHardDisc extends HardDisc {
     private final int guaranteedYears;
 
     // Constructor is given price, quantity and storage.
-    public ReliableHardDisc(int price, int quantity, int storage, int years){
-        super(price, quantity, storage);
+    public ReliableHardDisc(int price, int quantity, int storage, int physicalS,
+                            int rSpeed, int cacheS, String vend, int years){
+        super(price, quantity, storage, physicalS, rSpeed, cacheS, vend);
         guaranteedYears = years;
     } // ReliableHardDisc
 

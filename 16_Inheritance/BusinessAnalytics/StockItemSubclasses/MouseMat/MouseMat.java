@@ -11,7 +11,6 @@ public class MouseMat extends TextDescriptionStockItem {
         this("default Mouse description", price, quantity);
     } // MouseMat
 
-
     // Returns the string "Stock item type"
     public String getStockType(){
         return "Mouse mat";

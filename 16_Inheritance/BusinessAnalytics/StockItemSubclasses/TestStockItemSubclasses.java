@@ -1,3 +1,4 @@
+import java.awt.Color;
 // Create one of each type of stock item, and increase, sell and change price of stock.
 public class TestStockItemSubclasses{
     private static void createStock(StockItem item) {
@@ -56,10 +57,10 @@ public class TestStockItemSubclasses{
         StockItem[] stockItems = {
             new Book(100, 10),
             new MouseMat(200, 20),
-            new CPU(300, 30),
-            new Keyboard(400, 40),
-            new HardDisc(500, 50, 1000),
-            new ReliableHardDisc(500, 40, 200, 20)
+            new CPU(300, 30, 100, "ARM", "QBSoft"),
+            new Keyboard(400, 40, Color.red, "QBSoft", 32, "Mechanical"),
+            new HardDisc(500, 50, 1000, 20, 100, 50, "QBSoft"),
+            new ReliableHardDisc(500, 40, 200, 20, 100, 50, "QBSoft", 10)
         };
 
         for (StockItem stockItem : stockItems){
