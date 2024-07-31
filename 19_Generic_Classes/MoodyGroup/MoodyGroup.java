@@ -24,8 +24,8 @@ public class MoodyGroup<Type extends MoodyPerson> {
         return noOfPersons;
     }
 
-    public MoodyPerson getMoodyPerson(int index){
-        return moodyPersons[index];
+    public Type getMoodyPerson(int index){
+        return (Type)moodyPersons[index];
     }
 
     private int nextTo = 0;

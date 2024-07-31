@@ -12,9 +12,9 @@ public class TestMoodyGroup{
 
         MoodyGroup<MoodyPerson> commonGroup = new MoodyGroup<MoodyPerson>();
         commonGroup.addMoodyPerson(new Worker("W1"));
-        commonGroup.addMoodyPerson((Teenager)teenagersGroup.getMoodyPerson(0));
-        commonGroup.addMoodyPerson((Teenager)teenagersGroup.getMoodyPerson(1));
-        commonGroup.addMoodyPerson((Teenager)teenagersGroup.getMoodyPerson(2));
+        commonGroup.addMoodyPerson(teenagersGroup.getMoodyPerson(0));
+        commonGroup.addMoodyPerson(teenagersGroup.getMoodyPerson(1));
+        commonGroup.addMoodyPerson(teenagersGroup.getMoodyPerson(2));
         
         commonGroup.setHappy(true);
         System.out.printf("%s%n%n", commonGroup);
